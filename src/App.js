@@ -18,9 +18,9 @@ class App extends Component {
   }
 
   componentDidMount(){
-    axios.get('http://localhost:8000/api/dogs')
+    axios.get('api/dogs')
       .then(function (response) {
-        console.log(response);
+        console.log(response.data);
       })
       .catch(function (error) {
         console.log(error);
