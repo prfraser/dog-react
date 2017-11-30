@@ -19,8 +19,11 @@ class App extends Component {
 
   componentDidMount(){
     axios.get('api/dogs')
-      .then(function (response) {
+      .then((response) => {
         console.log(response.data);
+        this.setState({
+          dogs: [...this.state.dogs, ...response.data]
+        })
       })
       .catch(function (error) {
         console.log(error);
